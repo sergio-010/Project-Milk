@@ -1,5 +1,9 @@
-import "./App.css";
+import { MainRoutes } from "./routes/MainRoutes";
 
 export function App() {
-  return <></>;
+  return (
+    <>
+      <MainRoutes />
+    </>
+  );
 }
