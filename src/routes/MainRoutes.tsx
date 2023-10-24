@@ -2,7 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import { PublicRoutes } from "./PublicRoutes";
 import { PrivateRoutes } from "./PrivateRoutes";
-import { Users } from "../dashboard/pages";
+import { Employees, Users } from "../dashboard/pages";
 
 import { Login, Register, ResetPassword } from "../auth/pages";
 
@@ -20,7 +20,7 @@ export const MainRoutes = () => {
 
           <Route path="/" element={<PrivateRoutes />}>
             <Route index element={<Users />} />
-            <Route path="empleados" element={<Users />} />
+            <Route path="employees" element={<Employees />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
