@@ -7,7 +7,7 @@ interface Props {
 
 export const MainLayout = ({ children }: Props) => {
   return (
-    <main className="w-full h-screen flex font-serif  ">
+    <div className=" h-screen flex   ">
       <aside className="h-full  w-[250px] min-w-[150px]  md:w-[250px]    flex flex-col gap-4   lg:w-[350px] border-r-4  border-black">
         <ul className="flex flex-col gap-4  items-center ">
           <li className="hover:font-bold mt-3">
@@ -28,6 +28,6 @@ export const MainLayout = ({ children }: Props) => {
         </ul>
       </aside>
       <section className="w-full h-full grow">{children}</section>
-    </main>
+    </div>
   );
 };
