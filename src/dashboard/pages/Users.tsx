@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import pencil from "../../assets/pencil.png";
 import trash from "../../assets/trash.svg";
 
 export const Users = () => {
+  const navigate = useNavigate();
   return (
     <div className=" w-[90-%] mx-auto max-w-screen-xl overflow-hidden ">
       <table className=" w-full">
@@ -22,7 +24,10 @@ export const Users = () => {
               <button className="  hover:animate-bounce text-white rounded px-3 py-1 mr-2">
                 <img src={trash} alt="" />
               </button>
-              <button className=" text-white rounded px-3 py-1 ">
+              <button
+                className=" text-white rounded px-3 py-1 "
+                onClick={() => navigate("/users/edit/1")}
+              >
                 <img className=" hover:animate-bounce" src={pencil} alt="" />
               </button>
             </td>
@@ -30,7 +35,10 @@ export const Users = () => {
         </tbody>
       </table>
       <div className="px-6 py-4 flex justify-end">
-        <button className="flex justify-end  hover:animate-pulse   bg-black  text-white  rounded px-3 py-1">
+        <button
+          className="flex justify-end  hover:animate-pulse   bg-black  text-white  rounded px-3 py-1"
+          onClick={() => navigate("/users/create")}
+        >
           Agregar
         </button>
       </div>

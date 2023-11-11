@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import cow from "../../../assets/cow.svg";
 
 interface Props {
@@ -6,6 +6,7 @@ interface Props {
 }
 
 export const MainLayout = ({ children }: Props) => {
+  const navigate = useNavigate();
   return (
     <div className=" h-screen flex   ">
       <aside className="h-full  w-[250px] min-w-[150px]  md:w-[250px]    flex flex-col gap-4   lg:w-[350px] border-r-4  border-black">
@@ -24,6 +25,16 @@ export const MainLayout = ({ children }: Props) => {
           </li>
           <li className="hover:font-bold">
             <Link to="/employees">Employees</Link>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                localStorage.removeItem("milkDeliveriesToken");
+                navigate("/auth/login", { replace: true });
+              }}
+            >
+              Logout
+            </button>
           </li>
         </ul>
       </aside>
