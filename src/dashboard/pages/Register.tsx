@@ -46,151 +46,149 @@ export const Register = () => {
 
   return (
     <div className="h-screen">
-      <main className="h-full grid max-w-screen-xl mx-auto md:grid-cols-[2fr_3fr] lg:grid-cols-2">
-        <div className="bg-milkR bg-cover bg-center hidden md:block  "></div>
-        <section>
+      <main className="w-full h-full  ">
+        <section className="w-full h-full   ">
+          <article className="w-90% h-90% px-6 p-4">
+            <h2 className="text-3xl  pb-4">
+              INGRESE LOS DATOS DEL NUEVO USUARIO
+            </h2>
+          </article>
           <form
             noValidate
             onSubmit={formik.handleSubmit}
-            className="w-90% max-w-md mx-auto h-full py-16 px-6 flex flex-col gap-4 justify-center"
+            className="w-90%  h-[800px] px-6  grid grid-cols-2 "
           >
-            <article className="space-y-4 mb-8">
-              <h2 className="text-3xl">Bienvenidos</h2>
-              <p className="font-light text-zinc-600">
-                Ingrese Aqui Sus Datos Para Registrarse
-              </p>
-            </article>
-
-            <div className="grid">
-              <label htmlFor="fullname"> Full Name</label>
-              <input
-                id="fullname"
-                type="text"
-                name="fullName"
-                className="input-reset"
-                value={formik.values.fullName}
-                onBlur={formik.handleBlur}
-                onChange={formik.handleChange}
-              />
+            <div className=" mr-8 flex flex-col justify-between h-full p-4  ">
+              <div className="grid">
+                <label htmlFor="fullname"> Full Name</label>
+                <input
+                  id="fullname"
+                  type="text"
+                  name="fullName"
+                  className="input-reset"
+                  value={formik.values.fullName}
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                />
+              </div>
+              <div className="grid">
+                <label htmlFor="name">Dni</label>
+                <input
+                  id="dni"
+                  type="text"
+                  name="dni"
+                  className="input-reset"
+                  value={formik.values.dni}
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                />
+              </div>
+              <div className="grid">
+                <label htmlFor="email">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  className="input-reset"
+                  value={formik.values.email}
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                />
+              </div>
+              <div className="grid">
+                <label htmlFor="password">Password</label>
+                <input
+                  id="password"
+                  type="password"
+                  name="password"
+                  className="input-reset"
+                  value={formik.values.password}
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                />
+              </div>
+              <div className="grid">
+                <label htmlFor="phone">Phone</label>
+                <input
+                  id="phone"
+                  type="number"
+                  name="phone"
+                  className="input-reset"
+                  value={formik.values.phone}
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                />
+              </div>
+              <div className="grid">
+                <label htmlFor="address">Address</label>
+                <input
+                  id="address"
+                  type="text"
+                  name="address"
+                  className="input-reset"
+                  value={formik.values.address}
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                />
+              </div>
             </div>
-            <div className="grid">
-              <label htmlFor="name">Dni</label>
-              <input
-                id="dni"
-                type="text"
-                name="dni"
-                className="input-reset"
-                value={formik.values.dni}
-                onBlur={formik.handleBlur}
-                onChange={formik.handleChange}
-              />
-            </div>
-            <div className="grid">
-              <label htmlFor="email">Email</label>
-              <input
-                id="email"
-                type="email"
-                name="email"
-                className="input-reset"
-                value={formik.values.email}
-                onBlur={formik.handleBlur}
-                onChange={formik.handleChange}
-              />
-            </div>
-            <div className="grid">
-              <label htmlFor="password">Password</label>
-              <input
-                id="password"
-                type="password"
-                name="password"
-                className="input-reset"
-                value={formik.values.password}
-                onBlur={formik.handleBlur}
-                onChange={formik.handleChange}
-              />
-            </div>
-            <div className="grid">
-              <label htmlFor="phone">Phone</label>
-              <input
-                id="phone"
-                type="number"
-                name="phone"
-                className="input-reset"
-                value={formik.values.phone}
-                onBlur={formik.handleBlur}
-                onChange={formik.handleChange}
-              />
-            </div>
-            <div className="grid">
-              <label htmlFor="address">Address</label>
-              <input
-                id="address"
-                type="text"
-                name="address"
-                className="input-reset"
-                value={formik.values.address}
-                onBlur={formik.handleBlur}
-                onChange={formik.handleChange}
-              />
-            </div>
-            <div className="grid">
-              <label htmlFor="department">Department</label>
-              <select
-                id="department"
-                name="department"
-                className="input-reset"
-                value={formik.values.department}
-                onBlur={formik.handleBlur}
-                onChange={formik.handleChange}
-              >
-                <option value="">Seleccione un departamento</option>
-                <option value="perro">perro</option>
-                <option value="carro">carro</option>
-                <option value="arroz">arroz</option>
-                <option value="camion">camion</option>
-              </select>
-            </div>
-            <div className="grid">
-              <label htmlFor="city">City</label>
-              <select
+            <section className="flex flex-col justify-between  border-l-4 border-black mr-2 p-4">
+              <Select
+                label="City"
+                options={[
+                  { label: "Bogota", value: "bogota" },
+                  { label: "Medellin", value: "medellin" },
+                  { label: "Cali", value: "cali" },
+                  { label: "Cartagena", value: "cartagena" },
+                ]}
+                defaultOption={{ label: "Seleccione una ciudad", value: "" }}
                 name="city"
                 id="city"
-                className="input-reset"
                 value={formik.values.city}
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
-              >
-                <option value=""></option>
-                <option value="carro">carro</option>
-                <option value="perro">perro</option>
-                <option value="arroz">arroz</option>
-                <option value="camion">camion</option>
-              </select>
-            </div>
-            <Select
-              label="Roles"
-              options={[
-                { label: "Admin", value: "admin" },
-                { label: "Usuario", value: "user" },
-                { label: "Empleado", value: "employees" },
-              ]}
-              defaultOption={{ label: "Seleccione un Rol", value: "" }}
-              name="roles"
-              id="roles"
-              value={formik.values.roles}
-              onBlur={formik.handleBlur}
-              onChange={formik.handleChange}
-            />
-
-            <pre>{JSON.stringify(formik.errors, null, 2)}</pre>
-            <article className="grid gap-6 mt-8">
-              <button
-                type="submit"
-                className="bg-black text-white text-center p-4 rounded-3xl border hover:bg-white hover:text-black hover:border-black transition-colors"
-              >
-                Registrarse
-              </button>
-            </article>
+              />
+              <Select
+                label="Department"
+                options={[
+                  { label: "Perro", value: "perro" },
+                  { label: "Carro", value: "carro" },
+                  { label: "Arroz", value: "arroz" },
+                  { label: "Camion", value: "camion" },
+                ]}
+                defaultOption={{
+                  label: "Seleccione un Departamento",
+                  value: "",
+                }}
+                name="department"
+                id="department"
+                value={formik.values.department}
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+              />
+              <Select
+                label="Roles"
+                options={[
+                  { label: "Admin", value: "admin" },
+                  { label: "Usuario", value: "user" },
+                  { label: "Empleado", value: "employees" },
+                ]}
+                defaultOption={{ label: "Seleccione un Rol", value: "" }}
+                name="roles"
+                id="roles"
+                value={formik.values.roles}
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+              />
+              <article className="w-full">
+                <button
+                  type="submit"
+                  className="bg-black text-white text-center p-4 rounded-3xl border w-full hover:bg-white hover:text-black hover:border-black transition-colors "
+                >
+                  Registrar
+                </button>
+              </article>
+            </section>
           </form>
         </section>
       </main>

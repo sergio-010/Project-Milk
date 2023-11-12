@@ -20,14 +20,15 @@ export const MainLayout = ({ children }: Props) => {
               />
             </Link>
           </li>
-          <li className="hover:font-bold ">
+          <li className="hover:font-bold border-b">
             <Link to="/dashboard/users">Users</Link>
           </li>
-          <li className="hover:font-bold">
+          <li className="hover:font-bold border-b">
             <Link to="/employees">Employees</Link>
           </li>
           <li>
             <button
+              className="hover:font-bold border-b"
               onClick={() => {
                 localStorage.removeItem("milkDeliveriesToken");
                 navigate("/auth/login", { replace: true });

@@ -14,13 +14,13 @@ interface Props extends SelectProps {
 }
 export const Select = ({ label, options, defaultOption, ...props }: Props) => {
   return (
-    <div className="w-100 flex flex-col">
+    <div className="w-100 flex flex-col  border-b-2 border-black h-50  rounded-lg">
       {label && (
-        <label htmlFor={props.id} className="font-bold">
+        <label htmlFor={props.id} className="mb-2 text-left">
           {label}
         </label>
       )}
-      <select {...props} className="px-4 py-2">
+      <select {...props} className="px-4 py-2  ">
         {defaultOption && (
           <option value={defaultOption.value}>{defaultOption.label}</option>
         )}
