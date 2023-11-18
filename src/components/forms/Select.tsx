@@ -1,11 +1,8 @@
 import { SelectHTMLAttributes } from "react";
 
-type SelectProps = SelectHTMLAttributes<HTMLSelectElement>;
+import { Option } from "../../interfaces/common";
 
-type Option = {
-  label: string;
-  value: string;
-};
+type SelectProps = SelectHTMLAttributes<HTMLSelectElement>;
 
 interface Props extends SelectProps {
   label?: string;
@@ -14,9 +11,9 @@ interface Props extends SelectProps {
 }
 export const Select = ({ label, options, defaultOption, ...props }: Props) => {
   return (
-    <div className="w-100 flex flex-col  border-b-2 border-black h-50  rounded-lg">
+    <div className="w-100 flex flex-col  border-b border-black h-50  mb-6  rounded-lg">
       {label && (
-        <label htmlFor={props.id} className="mb-2 text-left">
+        <label htmlFor={props.id} className="text-left">
           {label}
         </label>
       )}

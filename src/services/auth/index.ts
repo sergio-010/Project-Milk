@@ -1,4 +1,4 @@
-import api from "../../api";
+import { api } from "../../api";
 import { RegisterBody } from "../../interfaces/auth";
 
 export const login = (email: string, password: string) => {

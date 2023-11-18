@@ -29,8 +29,9 @@ export const Login = () => {
       setError("");
       try {
         const { data } = await login(values.email, values.password);
+        console.log(data.token);
         localStorage.setItem("milkDeliveriesToken", data.token);
-        navigate("/dashboard", { replace: true });
+        navigate("/", { replace: true });
       } catch (error) {
         setError("Credenciales incorrectas");
       } finally {
